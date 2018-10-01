@@ -4,6 +4,7 @@ import './App.css'
 
 import { Route } from "react-router-dom"
 import HomePage from './components/HomePage.js'
+import Search from './components/Search.js'
 
 class BooksApp extends React.Component {
 
@@ -12,6 +13,7 @@ class BooksApp extends React.Component {
       <div>
 
       <Route exact path='/' component={ HomePage } />
+      <Route exact path='/' component={ Search } />
 
       </div>
     );
