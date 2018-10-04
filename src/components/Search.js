@@ -5,7 +5,8 @@ import Book from './Book.js'
 
 
 class Search extends React.Component {
-//Thank you to Ryan Waite for the tips on how to assign books to a shelf from the search page :)
+//Thank you to Ryan Waite for the tips on how to search for and assign
+//books to a shelf from the search page :)
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +24,7 @@ class Search extends React.Component {
     });
   }
 
-
+  //Assign shelves to books
   updateShelves = (book, shelf) => {
     BooksAPI.update(book, shelf).then((response) => {
       book.shelf = shelf;
@@ -33,11 +34,13 @@ class Search extends React.Component {
     });
   }
 
-
+  //Text input
   newQuery = (query) => {
     this.setState({query: query}, this.searchQuery);
   }
 
+
+  //Display results of query
   searchQuery() {
       if(this.state.query === "" || this.state.query === undefined) {
           return this.setState({ results: [] });
@@ -49,6 +52,7 @@ class Search extends React.Component {
             response.forEach((b) => {
               let find = this.state.books.filter((book) => book.id === b.id);
               if (find[0]) {
+                console.log(find[0]);
                 b.shelf = find[0].shelf;
               }
             });
