@@ -8,6 +8,7 @@ There is also a search page accessible from the bottom right button on the Home 
 
 To get started developing right away:
 
+* fork and clone this repo to your local machine
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
