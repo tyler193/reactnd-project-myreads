@@ -52,7 +52,6 @@ class Search extends React.Component {
             response.forEach((b) => {
               let find = this.state.books.filter((book) => book.id === b.id);
               if (find[0]) {
-                console.log(find[0]);
                 b.shelf = find[0].shelf;
               }
             });
